@@ -18,7 +18,9 @@ int getElementIndexInParent(Element element) {
   int index = 0;
   var previous = element.previousElementSibling;
   while (previous != null) {
-    index++;
+    if(previous.localName != "template"){
+      index++;
+    }
     previous = previous.previousElementSibling;
   }
   return index;
